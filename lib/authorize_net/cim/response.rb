@@ -17,6 +17,7 @@ module AuthorizeNet::CIM
           @customer_payment_profile_id_list = node_child_content_unless_nil(@root.at_css('customerPaymentProfileIdList'))
           @customer_shipping_address_id_list = node_child_content_unless_nil(@root.at_css('customerShippingAddressIdList'))
           @customer_address_id = node_content_unless_nil(@root.at_css('customerAddressId'))
+          @token = node_content_unless_nil(@root.at_css('token'))
           @validation_direct_response_list = @root.at_css('validationDirectResponseList')
           @validation_direct_response = @root.at_css('validationDirectResponse')
           @direct_response = @root.at_css('directResponse')
@@ -61,6 +62,10 @@ module AuthorizeNet::CIM
     # Returns a list of PaymentProfile IDs if any were returned by the gateway. Returns nil otherwise.
     def payment_profile_ids
       @customer_payment_profile_id_list
+    end
+    
+    def token
+      @token
     end
     
     # Returns a validation response as an AuthorizeNet::AIM::Response object if a validation response was returned

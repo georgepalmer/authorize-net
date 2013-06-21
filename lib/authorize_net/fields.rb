@@ -470,6 +470,11 @@ module AuthorizeNet
         {:customerAddressId => :customer_address_id}
       ]
       
+      GET_HOSTED_PROFILE_PAGE_FIELDS = [
+        REFID_FIELDS,
+        {:customerProfileId => :customer_profile_id}
+      ]
+      
       UPDATE_PROFILE_FIELDS = [
         REFID_FIELDS,
         {:profile => [
@@ -530,6 +535,7 @@ module AuthorizeNet
         AuthorizeNet::XmlTransaction::Type::CIM_GET_PROFILE => GET_PROFILE_FIELDS,
         AuthorizeNet::XmlTransaction::Type::CIM_GET_PAYMENT => GET_PAYMENT_FIELDS,
         AuthorizeNet::XmlTransaction::Type::CIM_GET_ADDRESS => GET_ADDRESS_FIELDS,
+        AuthorizeNet::XmlTransaction::Type::CIM_GET_HOSTED_PROFILE_PAGE => GET_HOSTED_PROFILE_PAGE_FIELDS,
         AuthorizeNet::XmlTransaction::Type::CIM_UPDATE_PROFILE => UPDATE_PROFILE_FIELDS,
         AuthorizeNet::XmlTransaction::Type::CIM_UPDATE_PAYMENT => UPDATE_PAYMENT_FIELDS,
         AuthorizeNet::XmlTransaction::Type::CIM_UPDATE_ADDRESS => UPDATE_ADDRESS_FIELDS,

@@ -310,6 +310,12 @@ module AuthorizeNet::CIM
       make_request
     end
     
+    def get_hosted_profile_page(profile_id)
+      @type = Type::CIM_GET_HOSTED_PROFILE_PAGE
+      handle_profile_id(profile_id)
+      make_request
+    end
+    
     # Sets up and submits a updateCustomerShippingAddressRequest transaction. If this transaction has already been
     # run, this method will return nil. Otherwise it will return an AuthorizeNet::CIM::Response object.
     # 
