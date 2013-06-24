@@ -310,8 +310,9 @@ module AuthorizeNet::CIM
       make_request
     end
     
-    def get_hosted_profile_page(profile_id)
+    def get_hosted_profile_page(profile_id, options = {})
       @type = Type::CIM_GET_HOSTED_PROFILE_PAGE
+      @fields.merge!(options.to_hash)
       handle_profile_id(profile_id)
       make_request
     end

@@ -472,7 +472,13 @@ module AuthorizeNet
       
       GET_HOSTED_PROFILE_PAGE_FIELDS = [
         REFID_FIELDS,
-        {:customerProfileId => :customer_profile_id}
+        {:customerProfileId => :customer_profile_id},
+        {:hostedProfileSettings => [
+          {:setting => [
+            {:settingName => :setting_name},
+            {:settingValue => :setting_value}
+          ], :_multivalue => :setting}
+        ], :_multivalue => :hosted_profile_settings}
       ]
       
       UPDATE_PROFILE_FIELDS = [
